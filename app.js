@@ -61,11 +61,52 @@ document.getElementById('case-minus').addEventListener('click', function () {
 });
 
 
-//if we paste or type product count
+//if we change product count without pressing increasing or decreasing button
 document.getElementById('phone-count').addEventListener('change', function (event) {
     updateProductTotal('phone', 1219, parseInt(event.target.value));
 });
 document.getElementById('case-count').addEventListener('change', function (event) {
     updateProductTotal('case', 59, parseInt(event.target.value));
 });
+
+//close button function
+function phoneClose() {
+    document.getElementById('phone').style.display = 'none';
+}
+function caseClose() {
+    document.getElementById('case').style.display = 'none';
+}
+
+//add to cart event handler
+document.getElementById('add-to-cart').addEventListener('click', function () {
+
+    const phoneCount = document.getElementById('phone-count').value
+    const caseCount = document.getElementById('case-count').value
+    const phonePrice = document.getElementById('phone-total').innerText
+    const casePrice = document.getElementById('case-total').innerText
+
+    const subTotal = document.getElementById('sub-total').innerText
+    const tax = document.getElementById('tax-amnt').innerText
+    const total = document.getElementById('total').innerText
+
+    if (parseInt(phoneCount) > 0) {
+
+        const phone = document.createElement('li');
+        phone.innerText = 'iPhone 11 128GB Black ' + phoneCount + ' pcs price ' + phonePrice;
+        document.getElementById('product-list').appendChild(phone);
+
+    }
+    if (parseInt(caseCount) > 0) {
+        const phoneCase = document.createElement('li');
+        phoneCase.innerText = 'iPhone 11 Silicone Case - Black ' + caseCount + ' pcs price ' + casePrice;
+        document.getElementById('product-list').appendChild(phoneCase);
+    }
+    if (parseInt(phoneCount) > 0 || parseInt(caseCount) > 0) {
+
+        document.getElementById('cart-subTotal').innerText = 'Sub-total = ' + subTotal
+        document.getElementById('cart-tax').innerText = 'Tax = ' + tax
+        document.getElementById('cart-total').innerText = 'Total = ' + total
+        document.getElementById('check-out').removeAttribute('disabled')
+    }
+})
 
