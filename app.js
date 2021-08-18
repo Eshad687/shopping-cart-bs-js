@@ -20,7 +20,25 @@ function updateProductCount(product, price, isIncreased) {
 function updateProductTotal(product, price, productCountInputNumber) {
     const productTotal = document.getElementById(product + '-total');
     productTotal.innerText = price * productCountInputNumber;
+    calculateTotal();
 }
+
+//function for calculating the whole shopping total
+function calculateTotal() {
+    const phoneTotal = parseInt(document.getElementById('phone-count').value) * 1219;
+    const caseTotal = parseInt(document.getElementById('case-count').value) * 59;
+    const subTotal = phoneTotal + caseTotal;
+    const tax = subTotal / 10;
+    const total = subTotal + tax;
+
+    document.getElementById('sub-total').innerText = subTotal;
+    document.getElementById('tax-amnt').innerText = tax;
+    document.getElementById('total').innerText = total;
+
+
+}
+
+
 //phone plus button event handler
 document.getElementById('phone-plus').addEventListener('click', function () {
 
