@@ -83,7 +83,7 @@
                      cart</button>
 
 
-                  <div class="offcanvas offcanvas-start bg-warning text-white" data-bs-scroll="true" tabindex="-1"
+                  <div class="offcanvas offcanvas-start bg-secondary text-white" data-bs-scroll="true" tabindex="-1"
                      id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                      <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Your Products</h5>
@@ -94,12 +94,18 @@
                         <ul id="product-list">
 
                         </ul>
-                        <p id="cart-subTotal" class="mt-5 pt-5"></p>
-                        <p id="cart-tax"></p>
-                        <p id="cart-total"></p>
-                        <button id="check-out" type="button" class=" btn btn-primary check-out text-white"
-                           disabled>Check
-                           Out</button>
+                        <hr>
+                        <div class="text-end">
+                           <p id="cart-subTotal" class="mt-5 pt-5"></p>
+                           <p id="cart-tax"></p>
+                           <p id="cart-total"></p>
+                        </div>
+                        <div class="mx-auto">
+                           <button id="check-out" type="button" class=" btn btn-danger check-out text-white"
+                              disabled>Check
+                              Out</button>
+                        </div>
+
 
                      </div>
                   </div>

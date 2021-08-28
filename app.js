@@ -88,6 +88,7 @@ document.getElementById('add-to-cart').addEventListener('click', function () {
     const subTotal = document.getElementById('sub-total').innerText
     const tax = document.getElementById('tax-amnt').innerText
     const total = document.getElementById('total').innerText
+    document.getElementById('product-list').textContent = '';
 
     if (parseInt(phoneCount) > 0) {
 
